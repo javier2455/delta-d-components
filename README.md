@@ -1,6 +1,19 @@
 # Delta Dveloxsoft React Components
 
-Versions
+Nota: Para probar la librería en un nuevo proyecto se deben instalar los siguientes paquetes:
+- delta-d-components
+- class-variance-authority
+- clsx
+- tailwind-merge
+
+y en el archivo principal (main.tsx o raiz del proyecto agregar la siguiente importación para que cargue los estilos de tailwind)
+import "delta-d-components/dist/delta-d-components.css"
+
+Versiones
+
+v1.0.1
+* Testeando error por número de versión.
+* Se quito el ref para buscar posible error.
 
 v1.0.0
 * Testeando error por número de versión.
