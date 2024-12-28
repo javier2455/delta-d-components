@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC } from "react";
+import { ButtonHTMLAttributes, FC, forwardRef } from "react";
 import { cn } from "../utils/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
@@ -78,21 +78,17 @@ export interface ButtonsProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof button> {}
 
-export const Button: FC<ButtonsProps> = ({
-  children,
-  className,
-  variant,
-  size,
-  rounded,
-  outline,
-  ...props
-}) => {
+export const Button: FC<ButtonsProps> = forwardRef<
+  HTMLButtonElement,
+  ButtonsProps
+>(({ children, className, variant, size, rounded, outline, ...props }, ref) => {
   return (
     <button
       className={cn(button({ variant, size, rounded, outline, className }))}
       {...props}
+      ref={ref}
     >
       {children}
     </button>
   );
-};
+});
