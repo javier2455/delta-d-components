@@ -3,7 +3,7 @@ import { cn } from "../utils/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const button = cva(
-  "flex items-center justify-center font-bold transition-colors duration-150",
+  "flex items-center justify-center font-bold transition-colors duration-200 active:scale-95",
   {
     variants: {
       variant: {
@@ -84,7 +84,7 @@ export const Button: FC<ButtonsProps> = forwardRef<
 >(({ children, className, variant, size, rounded, outline, ...props }, ref) => {
   return (
     <button
-      className={cn(button({ variant, size, rounded, outline, className }))}
+      className={cn(button({ variant, size, rounded, outline, className }), "dura")}
       {...props}
       ref={ref}
     >
